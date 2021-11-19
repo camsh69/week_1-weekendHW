@@ -26,4 +26,19 @@ def get_pets_by_breed(pet_shop, breed):
             same_breed.append(pet["breed"])
 
     return same_breed
+
+def find_pet_by_name(pet_shop, name):
+    for pet in pet_shop["pets"]:
+        if pet["name"] == name:
+            return pet["name"]
+
+def remove_pet_by_name(pet_shop, name):
+    i = 0
+    for pet in pet_shop["pets"]:
+        if pet["name"] == name:
+           pet_shop["pets"][i]["name"] = {"name": None}
+        i += 1
+
+def add_pet_to_stock(pet_shop, new_pet):
+    pet_shop["pets"].append(new_pet)
     
